@@ -1,0 +1,21 @@
+* Create database 
+  1> CREATE DATABASE oms_dev
+  2> GO
+  
+* Create new user login
+  1> CREATE LOGIN NewAdminName WITH PASSWORD = 'ABCD'
+  2> GO
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'NewAdminName')
+BEGIN
+    CREATE USER [NewAdminName] FOR LOGIN [NewAdminName]
+    EXEC sp_addrolemember N'db_owner', N'NewAdminName'
+END;
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'omsadmin')
+BEGIN
+    CREATE USER [omsadmin] FOR LOGIN [omsadmin]
+    EXEC sp_addrolemember N'db_owner', N'omsadmin'
+END;
+GO
