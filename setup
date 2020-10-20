@@ -3,3 +3,5 @@
 * It runs with sa USER sa, and password lroms2K18! :
 $ docker run --rm --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=lroms2K18!' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
 
+* Run sqlcmd inside docker S(server), U(user), P(password)
+$ /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P 'lroms2K18!'
