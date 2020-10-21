@@ -1,0 +1,14 @@
+
+* Fix for message 'You can only create a user with a password in a contained database'
+https://www.stevefenton.co.uk/2019/01/you-can-only-create-a-user-with-a-password-in-a-contained-database
+
+
+$ EXEC sp_configure 'contained database authentication', 1
+$ GO
+
+$ RECONFIGURE
+$ GO
+
+$ ALTER DATABASE DatabaseNameHere
+$ SET containment = PARTIAL
+$ GO
