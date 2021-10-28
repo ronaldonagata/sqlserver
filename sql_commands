@@ -19,3 +19,9 @@ BEGIN
     EXEC sp_addrolemember N'db_owner', N'omsadmin'
 END;
 GO
+
+# Dar permissão ao usuário no banco
+USE (your database)
+EXEC sp_addrolemember 'db_owner', '(your user name)'
+
+https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15
