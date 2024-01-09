@@ -1,7 +1,9 @@
 # Run with Docker
 
 * It runs with sa USER sa, and password lroms2K18! :
-$ docker run --rm --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=lroms2K18!' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+$ docker run --rm --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=pass8818!' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
 
 * Run sqlcmd inside docker S(server), U(user), P(password)
-$ /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P 'lroms2K18!'
+$ /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P 'pass8818!'
+
+docker run -d -p 3306:3306 --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=sergey -e MYSQL_DATABASE=photo_app -e MYSQL_USER=sergey -e MYSQL_PASSWORD=sergey mysql/mysql-server:latest
